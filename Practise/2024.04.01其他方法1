@@ -1,0 +1,19 @@
+@Composable
+private fun Greetings (
+    modifier: Modifier = Modifier,
+    indexs:List<Int> = listOf(0..7),
+    names:List<String> = List(7){"$it"},
+    contents:List<String> = listOf(
+        stringResource(id =TextIndex),
+){
+    LazyColumn(modifier = Modifier.padding(vertical = 4.dp)){
+        items(items=indexs) {index ->
+            Greeting(name = names[index], content = contents[index],text = texts[index])
+        }
+    }
+}
+
+
+var id = in 0..10
+
+var TextIndex = "R.string.text"+id

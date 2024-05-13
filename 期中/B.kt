@@ -11,20 +11,13 @@ import androidx.navigation.NavHostController
 @Composable
 fun Bpage(navController: NavHostController){
     Column {
-        fun showStudentInfo(){
-            for (student in students){
-                println("学号：$${student.sid}," +
-                        "姓名：$${student.sname}," +
-                        "年龄：$${student.sage}," +
-                        "邮件：$${student.semail}," +
-                        "班级：$${student.sclass}")
-            }
+        Text(text = "学生信息")
+        for (i in students.indices){
+            Text(text = students[i].sclass)
+            Text(text = students[i].semail)
+            Text(text = students[i].sname)
+            Text(text = students[i].sage)
         }
-
-        fun main(){
-            showStudentInfo()
-        }
-
         Button(onClick = {
             navController.navigate("Home")
         }) {
@@ -32,6 +25,27 @@ fun Bpage(navController: NavHostController){
         }
     }
 }
+
+
+
+
+
+
+
+
+//fun showStudentInfo(){
+//            for (student in students){
+//                println("学号：$${student.sid}," +
+//                        "姓名：$${student.sname}," +
+//                        "年龄：$${student.sage}," +
+//                        "邮件：$${student.semail}," +
+//                        "班级：$${student.sclass}")
+//            }
+//        }
+//
+//        fun main(){
+//            showStudentInfo()
+//        }
 
 
 
